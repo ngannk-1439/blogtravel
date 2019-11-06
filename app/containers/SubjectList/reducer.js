@@ -1,0 +1,5 @@
+/*
+ *
+ * SubjectList reducer
+ *
+ */
