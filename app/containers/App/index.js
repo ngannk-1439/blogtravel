@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  *
  * App
@@ -9,23 +10,18 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'pages/HomePage';
-import NotFoundPage from 'pages/NotFoundPage/Loadable';
-import Header from 'containers/Header';
-import Footer from 'containers/Footer';
+import MainHeader from 'containers/Header';
+import MainFooter from 'containers/Footer';
+import MainContent from 'containers/Content';
+import Slider from 'components/Slider';
 
-import GlobalStyle from '../../global-styles';
+import { GlobalStyle } from '../../global-styles';
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
+  width: 100%;
 `;
+
 
 export default function App() {
   return (
@@ -36,12 +32,10 @@ export default function App() {
       >
         <meta name="description" content="Blog Travel React" />
       </Helmet>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
-      <Footer />
+      <MainHeader />
+      <Slider />
+      <MainContent />
+      <MainFooter />
       <GlobalStyle />
     </AppWrapper>
   );
