@@ -13,6 +13,7 @@ export default function configureStore(initialState = {}, history) {
 
   // If Redux Dev Tools and Saga Dev Tools Extensions are installed, enable them
   /* istanbul ignore next */
+  // eslint-disable-next-line no-undef
   if (process.env.NODE_ENV !== 'production' && typeof window === 'object') {
     /* eslint-disable no-underscore-dangle */
     if (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)
@@ -49,7 +50,9 @@ export default function configureStore(initialState = {}, history) {
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
+  // eslint-disable-next-line no-undef
   if (module.hot) {
+    // eslint-disable-next-line no-undef
     module.hot.accept('./reducers', () => {
       store.replaceReducer(createReducer(store.injectedReducers));
     });

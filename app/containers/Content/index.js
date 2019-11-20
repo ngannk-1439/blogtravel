@@ -16,10 +16,7 @@ function MainContent() {
   return (
     <Layout>
       <Content>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="" component={NotFoundPage} />
-        </Switch>
+        <p>This is main content</p>
       </Content>
       <Sider
         theme="light"
