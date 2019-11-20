@@ -1,11 +1,13 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-
-import H1 from 'components/H1';
+// eslint-disable-next-line no-unused-vars
+import CountryList from 'containers/CountryList';
 
 export default function HomePage() {
   return (
-    <H1>
+    <div>
       <p>Welcome to home page</p>
-    </H1>
+      <CountryList />
+    </div>
   );
 }

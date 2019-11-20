@@ -30,9 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.fontSizeBase};
   }
 
+  a:hover {
+    color: ${colors.primaryColor};
+  }
+
   #app {
     min-height: 100%;
     min-width: 100%;
   }
 `;
-
