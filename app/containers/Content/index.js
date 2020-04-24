@@ -2,7 +2,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'pages/HomePage';
+import Slider from 'components/Slider';
+import ArticleList from 'containers/Articles';
+import Article from 'containers/Article';
 import NotFoundPage from 'pages/NotFoundPage/Loadable';
 import MainSider from 'containers/Sider';
 
@@ -15,14 +17,18 @@ const { Content, Sider } = Layout;
 function MainContent() {
   return (
     <Layout>
-      <Content>
-        <p>This is main content</p>
-      </Content>
-      <Sider
-        theme="light"
-      >
-        <MainSider />
-      </Sider>
+      <Slider />
+      <Layout>
+        <Content>
+          <ArticleList />
+          <Article />
+        </Content>
+        <Sider
+          theme="light"
+        >
+          <MainSider />
+        </Sider>
+      </Layout>
     </Layout>
   )
 }

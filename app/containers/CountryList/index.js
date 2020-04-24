@@ -22,7 +22,7 @@ import {
 
 const key = 'CountryList';
 
-export function CountryList(props) {
+function CountryList(props) {
   useInjectReducer({key, reducer});
   useInjectSaga({key, saga});
 
@@ -36,9 +36,11 @@ export function CountryList(props) {
     .map((item, i) => {
       let merged_country = allcountry
         .filter(citem => citem.continent_name == item)
-        .map(citem =>  citem.country_name);
-      let id = i + 1;
-    return {id: id, continent_name: item, country_name: merged_country}
+        .map(citem => {
+          return {countryId: citem.id, countryName: citem.country_name}
+        });
+      let continentId = i + 1;
+    return {continentId: continentId, continent_name: item, countries: merged_country}
   });
 
   if(continents) {
