@@ -18,7 +18,7 @@ const countryReducer = (state = initialState, action) =>
     switch (action.type) {
       case FETCH_COUNTRY:
         draft.loading = true;
-        draft.erro = false;
+        draft.error = false;
         draft.countries = false;
         break;
       case FETCH_COUNTRY_SUCCESS:
