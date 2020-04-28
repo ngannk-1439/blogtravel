@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -45,7 +45,7 @@ function CountryList(props) {
 
   if(continents) {
     countryListContent = continents.map(country => (
-      <CountryItem key={country.id} country={country} />
+      <CountryItem key={country.continentId} country={country} />
     ));
   } else {
     <div>List danh sách đang trống</div>
@@ -54,6 +54,12 @@ function CountryList(props) {
   return (
     <div>{countryListContent}</div>
   )
+}
+
+CountryList.propTypes = {
+  countries: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool])
 }
 
 const mapStateToProps = createStructuredSelector({

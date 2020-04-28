@@ -1,5 +1,6 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -19,10 +20,9 @@ import {
 
 import ArticleItem from './ArticleItem';
 
-import { Card, Row, Col } from 'antd';
+import { Card, Row } from 'antd';
 
 import styled from 'styled-components';
-import { colors } from '../../global-styles';
 
 const ArticleListLayout = styled.div`
   padding: 30px;
@@ -46,7 +46,6 @@ function ArticleList(props) {
     <div>No data</div>
   }
 
-  console.log(props.articles);
   return (
     <ArticleListLayout>
       <Card title="Card title" extra={<a href="#">Xem thêm</a>}>
@@ -56,6 +55,12 @@ function ArticleList(props) {
       </Card>
     </ArticleListLayout>
   )
+}
+
+ArticleList.propTypes = {
+  articles: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool])
 }
 
 const mapStateToProps = createStructuredSelector({

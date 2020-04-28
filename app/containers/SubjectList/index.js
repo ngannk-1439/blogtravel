@@ -1,8 +1,7 @@
-/* eslint-disable */
 import React from 'react';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
-import { colors } from '../../global-styles';
+import { colors } from 'global-styles';
 import {  Menu } from 'antd';
 
 const StyledMenu = styled(Menu)`

@@ -1,17 +1,11 @@
-/* eslint-disable */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-import { Card, Row, Col } from 'antd';
+import { Card, Col } from 'antd';
 
 import styled from 'styled-components';
-import { colors } from '../../global-styles';
-
-const ArticleListLayout = styled.div`
-  padding: 30px;
-`;
 
 const StyledCardItem = styled(Card)`
   .ant-card-cover {
@@ -20,7 +14,8 @@ const StyledCardItem = styled(Card)`
   }
 `;
 
-export default ({article}) => {
+
+const ArticleItem = ({article}) => {
   return (
     <Col span={12}>
       <StyledCardItem 
@@ -38,3 +33,9 @@ export default ({article}) => {
     </Col>
   )
 }
+
+ArticleItem.propTypes = {
+  article: PropTypes.object,
+}
+
+export default ArticleItem;

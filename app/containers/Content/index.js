@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+// import { Switch, Route } from 'react-router-dom';
 
 import Slider from 'components/Slider';
-import ArticleList from 'containers/Articles';
-import Article from 'containers/Article';
-import NotFoundPage from 'pages/NotFoundPage/Loadable';
+import Articles from 'containers/Articles';
 import MainSider from 'containers/Sider';
 
 import 'antd/dist/antd.css';
@@ -20,8 +17,7 @@ function MainContent() {
       <Slider />
       <Layout>
         <Content>
-          <ArticleList />
-          <Article />
+          <Articles />
         </Content>
         <Sider
           theme="light"

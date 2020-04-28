@@ -1,23 +1,16 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
-import { StyledMenu, StyledMenuItem } from '../../containers/Header/StyledHeader';
+import { StyledMenu, StyledMenuItem } from 'containers/Header/StyledHeader';
 
 import { Menu } from 'antd';
 
 const { SubMenu } = Menu;
 
-function CountryArticle({ match }) {
-  return (
-    <div>Id: {match.params.countryId}</div>
-  )
-}
-
-export default ({country}) => {
+const CountryItem = ({country}) => {
   const countryitem = country.countries;
   return (
     <StyledMenu
@@ -40,3 +33,9 @@ export default ({country}) => {
       // <Route patch='/countries/:countryId' component={CountryArticle}></Route>
   )
 }
+
+CountryItem.propTypes = {
+  country: PropTypes.object,
+}
+
+export default CountryItem;
