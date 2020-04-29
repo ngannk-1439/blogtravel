@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  *
  * App
@@ -13,13 +12,11 @@ import styled from 'styled-components';
 
 import { Switch, Route } from 'react-router-dom';
 
-import MainHeader from 'containers/Header';
-import MainFooter from 'containers/Footer';
-import MainContent from 'containers/Content';
-import Article from 'containers/Article';
-import ArticleDetail from 'containers/ArticleDetail';
+import Header from 'containers/Header';
+import Footer from 'containers/Footer';
+import Content from 'containers/Content';
 
-import { GlobalStyle } from '../../global-styles';
+import { GlobalStyle } from 'global-styles';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -35,13 +32,11 @@ export default function App() {
       >
         <meta name="description" content="Blog Travel React" />
       </Helmet>
-      <MainHeader />
+      <Header />
       <Switch>
-        <Route exact path="/" component={MainContent} />
-        <Route path="/countries/:countryId" component={Article} />
-        <Route path="/articles/:id" component={ArticleDetail} />
+        <Route exact path="/" component={Content} />
       </Switch>
-      <MainFooter />
+      <Footer />
       <GlobalStyle />
     </AppWrapper>
   );

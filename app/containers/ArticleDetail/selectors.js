@@ -1,5 +1,0 @@
-/*
- *
- * ArticleDetail selectors
- *
- */

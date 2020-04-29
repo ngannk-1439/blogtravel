@@ -4,11 +4,11 @@
  *
  */
 
-import { FETCH_COUNTRY, FETCH_COUNTRY_FAILURE } from './constants';
+import { FETCH_COUNTRY_FAILURE, FETCH_COUNTRY_SUCCESS } from './constants';
 
 export function loadCountries(countries) {
   return {
-    type: FETCH_COUNTRY,
+    type: FETCH_COUNTRY_SUCCESS,
     countries
   }
 }

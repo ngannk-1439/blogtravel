@@ -4,11 +4,11 @@
  *
  */
 
-import { FETCH_ARTICLES, FETCH_ARTICLES_FAILURE } from './constants';
+import { FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE } from './constants';
 
 export function loadArticles(articles) {
   return {
-    type: FETCH_ARTICLES,
+    type: FETCH_ARTICLES_SUCCESS,
     articles
   }
 }

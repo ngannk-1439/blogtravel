@@ -9,7 +9,6 @@ import history from 'utils/history';
 import globalReducer from 'containers/App/reducer';
 import countryReducer from 'containers/CountryList/reducer';
 import articlesReducer from 'containers/Articles/reducer';
-import articleReducer from 'containers/Article/reducer';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -19,7 +18,6 @@ export default function createReducer(injectedReducers = {}) {
     global: globalReducer,
     countries: countryReducer,
     articles: articlesReducer,
-    article: articleReducer,
     router: connectRouter(history),
     ...injectedReducers,
   });
